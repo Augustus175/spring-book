@@ -9,6 +9,7 @@ bin
 target
 */META-INF/*
 *iml
+*.iml
 */.idea/*
 */.idea/
 # Mobile Tools for Java (J2ME)
