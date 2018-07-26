@@ -5,11 +5,14 @@ import com.smart.dao.UserDao;
 import com.smart.domain.LoginLog;
 import com.smart.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author zhangzhibo-linux
  * @date 18-7-22 下午4:25
  */
+@Service
 public class UserService {
     private UserDao userDao;
     private LoginLogDao loginLogDao;
@@ -23,6 +26,7 @@ public class UserService {
         return userDao.findUserByUserName(userName);
     }
 
+    @Transactional
     public void longinSuccess(User user) {
         user.setCredits(5 + user.getCredits());
         LoginLog loginLog = new LoginLog();
