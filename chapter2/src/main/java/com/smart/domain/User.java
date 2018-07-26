@@ -1,4 +1,4 @@
-package com.smart.project.domain;
+package com.smart.domain;
 
 import java.io.Serializable;
 import java.util.Date;

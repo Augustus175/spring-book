@@ -1,4 +1,4 @@
-package com.smart.project;
+package com.smart;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

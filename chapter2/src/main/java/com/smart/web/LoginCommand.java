@@ -1,4 +1,4 @@
-package com.smart.project.web;
+package com.smart.web;
 
 /**
  * @author zhangzhibo-linux

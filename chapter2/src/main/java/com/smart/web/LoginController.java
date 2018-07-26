@@ -1,7 +1,7 @@
-package com.smart.project.web;
+package com.smart.web;
 
-import com.smart.project.domain.User;
-import com.smart.project.service.UserService;
+import com.smart.domain.User;
+import com.smart.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

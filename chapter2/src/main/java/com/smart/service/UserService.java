@@ -1,9 +1,9 @@
-package com.smart.project.service;
+package com.smart.service;
 
-import com.smart.project.dao.LoginLogDao;
-import com.smart.project.dao.UserDao;
-import com.smart.project.domain.LoginLog;
-import com.smart.project.domain.User;
+import com.smart.dao.LoginLogDao;
+import com.smart.dao.UserDao;
+import com.smart.domain.LoginLog;
+import com.smart.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

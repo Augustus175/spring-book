@@ -1,8 +1,8 @@
-package com.smart.project;
+package com.smart;
 
 /**
  * Hello world!
- *
+ *project
  */
 public class App 
 {

@@ -1,6 +1,6 @@
-package com.smart.project.dao;
+package com.smart.dao;
 
-import com.smart.project.domain.User;
+import com.smart.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowCallbackHandler;
