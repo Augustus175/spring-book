@@ -27,7 +27,7 @@ public class UserService {
     }
 
     @Transactional
-    public void longinSuccess(User user) {
+    public void loginSuccess(User user) {
         user.setCredits(5 + user.getCredits());
         LoginLog loginLog = new LoginLog();
         loginLog.setUserId(user.getUserId());
@@ -43,7 +43,7 @@ public class UserService {
     }
 
     @Autowired
-    public void setLoginLogDao(LoginLog loginLog) {
+    public void setLoginLogDao(LoginLogDao loginLogDao) {
         this.loginLogDao = loginLogDao;
     }
 }

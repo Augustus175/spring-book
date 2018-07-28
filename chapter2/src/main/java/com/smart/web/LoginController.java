@@ -33,7 +33,7 @@ public class LoginController {
             User user = userService.findUserByName(loginCommand.getUserName());
             user.setLastIp(request.getLocalAddr());
             user.setLastVist(new Date());
-            userService.longinSuccess(user);
+            userService.loginSuccess(user);
             request.getSession().setAttribute("user", user);
             return new ModelAndView("main");
         }
