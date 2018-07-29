@@ -30,9 +30,9 @@ public class LoginController {
         if (!isValidUser) {
             return new ModelAndView("login", "error", "User or Password error !");
         } else {
-            User user = userService.findUserByName(loginCommand.getUserName());
+            User user = userService.findUserByUserName(loginCommand.getUserName());
             user.setLastIp(request.getLocalAddr());
-            user.setLastVist(new Date());
+            user.setLastVisit(new Date());
             userService.loginSuccess(user);
             request.getSession().setAttribute("user", user);
             return new ModelAndView("main");

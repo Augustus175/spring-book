@@ -1,6 +1,8 @@
 package com.smart.dao;
 
 import com.smart.domain.User;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowCallbackHandler;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  * @author zhangzhibo-linux
@@ -16,6 +19,7 @@ import java.sql.SQLException;
 @Repository
 public class UserDao {
     private JdbcTemplate jdbcTemplate;
+    protected final Log logger = LogFactory.getLog(this.getClass());
     private final static String MATCH_COUNT_SQL = " SELECT count(*) FROM t_user " +
             " WHERE user_name=? and password=? ";
     private final static String UPDATE_LOGIN_INFO_SQL = " UPDATE  t_user SET " +
@@ -46,9 +50,9 @@ public class UserDao {
     }
 
     public void updateLoginInfo(User user) {
-        jdbcTemplate.update(UPDATE_LOGIN_INFO_SQL, new Object[]{user.getLastVist(),
+        int result = jdbcTemplate.update(UPDATE_LOGIN_INFO_SQL, new Object[]{user.getLastVisit(),
                 user.getLastIp(), user.getCredits(), user.getUserId()});
-
+        logger.info("update result is " + result);
     }
 
     @Autowired

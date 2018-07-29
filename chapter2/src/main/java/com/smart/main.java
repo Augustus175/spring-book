@@ -5,6 +5,7 @@ import com.smart.service.UserService;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import javax.sql.DataSource;
+import java.util.Date;
 
 /**
  * @author zhangzhibo-linux
@@ -16,9 +17,14 @@ public class main {
         ctx.start();
         DataSource dataSource = (DataSource) ctx.getBean("dataSource");
         System.out.println(dataSource.toString());
-        //    @Autowired
         UserService userService = (UserService) ctx.getBean("userService");
-        boolean b1 = userService.hasMatchUser("admin", "1234");
+        boolean b1 = userService.hasMatchUser("admin", "123456");
+        User user = userService.findUserByUserName("admin");
         System.out.println(b1);
+        user.setUserId(1);
+        user.setUserName("admin");
+        user.setLastIp("192.168.12.7");
+        user.setLastVisit(new Date());
+        userService.loginSuccess(user);
     }
 }

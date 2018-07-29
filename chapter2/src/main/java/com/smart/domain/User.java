@@ -13,7 +13,7 @@ public class User implements Serializable {
     private String password;
     private int credits;
     private String lastIp;
-    private Date lastVist;
+    private Date lastVisit;
 
     public int getUserId() {
         return userId;
@@ -55,11 +55,11 @@ public class User implements Serializable {
         this.lastIp = lastIp;
     }
 
-    public Date getLastVist() {
-        return lastVist;
+    public Date getLastVisit() {
+        return lastVisit;
     }
 
-    public void setLastVist(Date lastVist) {
-        this.lastVist = lastVist;
+    public void setLastVisit(Date lastVist) {
+        this.lastVisit = lastVist;
     }
 }

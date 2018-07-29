@@ -22,7 +22,7 @@ public class UserService {
         return matchCount > 0;
     }
 
-    public User findUserByName(String userName) {
+    public User findUserByUserName(String userName) {
         return userDao.findUserByUserName(userName);
     }
 
@@ -32,7 +32,7 @@ public class UserService {
         LoginLog loginLog = new LoginLog();
         loginLog.setUserId(user.getUserId());
         loginLog.setIp(user.getLastIp());
-        loginLog.setLoginDate(user.getLastVist());
+        loginLog.setLoginDate(user.getLastVisit());
         userDao.updateLoginInfo(user);
         loginLogDao.insertLoginLog(loginLog);
     }
